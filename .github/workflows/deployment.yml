@@ -74,7 +74,7 @@ jobs:
         uses: docker/metadata-action@v4.6.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          images: name=${{ env.REGISTRY }}/${{ env.USERNAME }}/${{ matrix.name }},enable=true
+          images: name=${{ env.REGISTRY }}/${{ env.USERNAME }}/deprecate/${{ matrix.name }},enable=true
 
           labels: |
             org.opencontainers.image.authors=MM25Zamanian@gmail.com
