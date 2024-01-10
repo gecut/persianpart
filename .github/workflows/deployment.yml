@@ -78,9 +78,9 @@ jobs:
 
           labels: |
             org.opencontainers.image.authors=MM25Zamanian@gmail.com
-            org.opencontainers.image.title=@gecut/${{ matrix.name }}
+            org.opencontainers.image.title=@gecut/${{ matrix.name }}-deprecate
             org.opencontainers.image.description=${{ matrix.description }}
-            org.opencontainers.image.distribution = "https://github.com/gecut/gecut"
+            org.opencontainers.image.distribution = "https://github.com/gecut/persianpart"
 
           tags: |
             type=semver,enable=true,pattern={{major}}
