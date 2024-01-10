@@ -10,7 +10,7 @@ export const api = createTRPCProxyClient<AppRouter>({
   links: [
     errorHandlingLink,
     httpLink({
-      url: 'http://localhost:3000',
+      url: 'https://api.persianpart.shop',
       fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => {
         request('loading', 'start');
 
