@@ -1,0 +1,12 @@
+{
+  "platform": "docker",
+  "image": "ghcr.io/gecut/gtodo-api:latest",
+  "app": "gtodo-api",
+  "port": 80,
+  "disks": [
+    {
+      "name": "storage",
+      "mountTo": "/storage"
+    }
+  ]
+}

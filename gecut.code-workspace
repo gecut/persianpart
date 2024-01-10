@@ -1,0 +1,196 @@
+{
+  "folders": [
+    {
+      "name": "@gecut/monorepo (root)",
+      "path": "."
+    },
+    {
+      "name": "☁️ Cloud",
+      "path": "cloud"
+    },
+
+    //* Applications
+    {
+      "name": "📲 Demo PWA",
+      "path": "apps/demo-pwa"
+    },
+    {
+      "name": "📲 PersianPart PWA",
+      "path": "apps/persianpart-pwa"
+    },
+    {
+      "name": "📲 PersianPart API",
+      "path": "apps/persianpart-api"
+    },
+    {
+      "name": "📲 Hami PWA",
+      "path": "apps/hami-pwa"
+    },
+    {
+      "name": "📲 Hami API",
+      "path": "apps/hami-api"
+    },
+    {
+      "name": "📲 Hami Orders SITE",
+      "path": "apps/hami-orders-site"
+    },
+    {
+      "name": "📲 Gtodo PWA",
+      "path": "apps/gtodo-pwa"
+    },
+    {
+      "name": "📲 Gtodo API",
+      "path": "apps/gtodo-api"
+    },
+    {
+      "name": "📲 Factor Creator PWA",
+      "path": "apps/factor-creator-pwa"
+    },
+
+    //* Micro-Servies
+    {
+      "name": "🛠️ Storage Server",
+      "path": "apps/services/storage-server"
+    },
+
+    //* Packages
+    {
+      "name": "📦 Logger",
+      "path": "packages/core/logger"
+    },
+    {
+      "name": "📦 Log",
+      "path": "packages/core/log"
+    },
+    {
+      "name": "📦 Utilities",
+      "path": "packages/core/utilities"
+    },
+    {
+      "name": "📦 Lorem",
+      "path": "packages/core/logger"
+    },
+    {
+      "name": "📦 Signal",
+      "path": "packages/core/signal"
+    },
+    {
+      "name": "📦 Data Manager",
+      "path": "packages/ui/data-manager"
+    },
+    {
+      "name": "📦 Form Builder",
+      "path": "packages/ui/form-builder"
+    },
+    {
+      "name": "📦 Form Validator",
+      "path": "packages/ui/form-validator"
+    },
+    {
+      "name": "📦 Ui Common",
+      "path": "packages/ui/common"
+    },
+    {
+      "name": "📦 Ui Internationalization",
+      "path": "packages/ui/i18n"
+    },
+    {
+      "name": "📦 Ui Mixins",
+      "path": "packages/ui/mixins"
+    },
+    {
+      "name": "📦 Ui Kit",
+      "path": "packages/ui/ui-kit"
+    },
+    {
+      "name": "📦 Ui Lit Helper",
+      "path": "packages/ui/lit-helper"
+    },
+    {
+      "name": "📦 Ui Material 3 Helper",
+      "path": "packages/ui/m3-helper"
+    },
+    {
+      "name": "📦 Ui Components",
+      "path": "packages/ui/components"
+    },
+    {
+      "name": "📦 Ui Icons",
+      "path": "packages/ui/icons"
+    }
+  ],
+  "settings": {
+    "npm.packageManager": "yarn",
+    "lit-plugin.strict": true,
+    "lit-plugin.rules.no-missing-import": "off",
+    "editor.wordWrapColumn": 120,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.useEditorConfig": true,
+    "cSpell.language": "en-US,fa-IR",
+    "cSpell.words": [
+      "alertdialog",
+      "Alwatr",
+      "appname",
+      "Authed",
+      "Booleanize",
+      "BSON",
+      "circularprogress",
+      "colspan",
+      "DARKUBE",
+      "datetime",
+      "fabs",
+      "fontsource",
+      "gecut",
+      "gtodo",
+      "hami",
+      "iconbutton",
+      "iconify",
+      "kavenegar",
+      "LIARA",
+      "modeless",
+      "nrwl",
+      "persianpart",
+      "Roboto",
+      "signale",
+      "trpc",
+      "tslog",
+      "typeahead",
+      "typeorm",
+      "typescale",
+      "Unfonts",
+      "unkown",
+      "unplugin",
+      "vaadin",
+      "Vazirmatn",
+      "zamanian",
+      "zindex"
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "[dockerfile]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[properties]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "githubPullRequests.ignoredPullRequestBranches": ["next"],
+    "[xml]": {
+      "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[nginx]": {
+      "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "nrwl.angular-console",
+      "esbenp.prettier-vscode",
+      "firsttris.vscode-jest-runner",
+      "dbaeumer.vscode-eslint"
+    ]
+  }
+}

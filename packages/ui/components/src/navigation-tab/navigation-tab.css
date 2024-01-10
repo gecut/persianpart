@@ -1,0 +1,120 @@
+:host {
+  --_in-active-color: var(--g-navigation-tab-in-active-color, #555);
+  --_active-color: var(--g-navigation-tab-active-color, #8d02de);
+  --_background-color: var(--g-navigation-tab-background-color, #fff);
+  --_badge-background-color: var(
+    --g-navigation-badge-background-color,
+    #cf1717
+  );
+
+  background-color: var(--_background-color);
+
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  max-width: max-content;
+  min-width: clamp(52px, 20vw, 86px);
+}
+
+:host([active]) .icon md-icon {
+  color: var(--_active-color);
+}
+:host([active]) .icon::before {
+  opacity: 25%;
+}
+:host([active]) .text {
+  color: var(--_active-color);
+}
+:host([active]) .badge {
+  transform: translate(-8px, -8px);
+}
+:host([active]) .badge:empty {
+  transform: translate(0, 0);
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 10px 8px 6px;
+  flex-grow: 1;
+  align-items: center;
+  color: #2f3046;
+  flex-grow: 1;
+  text-decoration: none;
+  width:100%;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-family: sans-serif;
+  top: 0;
+  inset-inline-end: 0;
+  transform: translate(6%, -4px);
+  padding: 0 6px;
+  line-height: 0;
+  font-weight: bold;
+  font-size: clamp(10px, 1.1vw, 12px);
+  color: var(--_background-color);
+  background: var(--_badge-background-color);
+  border-radius: 0.5em;
+  min-width: 1.7em;
+  width: fit-content;
+  height: 1.7em;
+  box-shadow: 0px 0px 0px 2px var(--_background-color);
+  transition: transform 125ms ease-in-out;
+  will-change: transform;
+  z-index: 1;
+  filter: contrast(95%);
+}
+.badge:empty {
+  top: 0;
+  inset-inline-end: 0;
+  transform: translate(clamp(10px, 4vw, 20px), 4px);
+  padding: 0;
+  min-width: 0;
+  width: 5px;
+  height: 5px;
+}
+
+.icon {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background-color: transparent;
+  border-radius: 12px;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.icon md-icon {
+  color: var(--_in-active-color);
+  transition: color 250ms ease-in-out;
+  will-change: color;
+}
+
+.icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--_active-color);
+  opacity: 0;
+  transition: opacity 250ms linear;
+  will-change: opacity;
+}
+
+.text {
+  font-weight: normal;
+  font-size: 13px;
+  color: var(--_in-active-color);
+  margin: 6px 4px 0;
+  transition: color 250ms ease-in-out;
+  will-change: color;
+}

@@ -1,0 +1,39 @@
+{
+  "name": "lit-helper",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/ui/lit-helper/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "rootDir": ".",
+        "outputPath": "dist/packages/ui/lit-helper",
+        "main": "packages/ui/lit-helper/src/index.ts",
+        "tsConfig": "packages/ui/lit-helper/tsconfig.lib.json",
+        "assets": []
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs lit-helper {args.ver} {args.tag}",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/ui/lit-helper/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.fullscreen-loading {
+  position: absolute;
+  display: flex;
+  inset: 0;
+  z-index: var(--sys-zindex-topness);
+  background: var(--md-sys-color-surface);
+}
+.fullscreen-loading md-circular-progress {
+  margin: auto;
+}

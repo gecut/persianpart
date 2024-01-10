@@ -1,0 +1,107 @@
+$background-color_1: #ccc;
+
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  border: 2px solid #222;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+}
+
+header {
+  align-items: center;
+  border-bottom: 2px solid #222;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+
+  .logo {
+    height: 64px;
+    width: 170px;
+
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 170px;
+
+    > * {
+      border: 2px solid #222;
+      border-radius: 4px;
+      font-size: 0.8em;
+      gap: 4px;
+      padding: 4px 16px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .title {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 0.8em;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1em;
+      margin: 0;
+    }
+  }
+}
+
+section {
+  .title-box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: $background-color_1;
+    border: 2px solid #222;
+    border-radius: 4px;
+    font-size: 0.7em;
+    height: 30px;
+    margin: 0;
+    position: absolute;
+    text-align: start;
+    top: -15px;
+    width: 200px;
+  }
+
+  flex-direction: column;
+  border-bottom: 2px solid #222;
+  display: flex;
+  padding: 16px;
+  position: relative;
+
+  p {
+    font-size: 0.8em;
+    margin: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+@media print and (color) {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

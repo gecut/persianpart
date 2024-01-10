@@ -1,0 +1,32 @@
+{
+  "name": "@gecut/ui-kit",
+  "version": "0.0.1",
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "email": "mm25zamanian@gmail.com",
+    "url": "https://mm25zamanain.ir"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "description": "",
+  "keywords": [
+    "gecut"
+  ],
+  "license": "MIT",
+  "files": [
+    "**/*.{d.ts.map,d.ts,js.map,js,html,md}"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/gecut",
+    "directory": "packages/ui/ui-kit"
+  },
+  "homepage": "https://github.com/gecut/gecut/tree/next/packages/ui/ui-kit#readme",
+  "bugs": {
+    "url": "https://github.com/gecut/gecut/issues"
+  }
+}

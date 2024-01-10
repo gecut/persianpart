@@ -1,0 +1,54 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "Node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "isolatedModules": false,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "#demo/*": ["apps/demo-pwa/src/*"],
+      "#gtodo/*": ["apps/gtodo-pwa/src/*", "apps/gtodo-api/src/*"],
+      "#hami/*": [
+        "apps/hami-pwa/src/*",
+        "apps/hami-api/src/*",
+        "apps/hami-orders-site/src/*"
+      ],
+      "#persianpart/*": [
+        "apps/persianpart-pwa/src/*",
+        "apps/persianpart-api/src/*"
+      ],
+      "@gecut/common/*": ["packages/ui/common/src/*"],
+      "@gecut/components/*": ["packages/ui/components/src/*"],
+      "@gecut/data-manager/*": ["packages/ui/data-manager/src/*"],
+      "@gecut/form-builder": ["packages/ui/form-builder/src/form-builder.ts"],
+      "@gecut/form-validator": ["packages/ui/form-validator/src/index.ts"],
+      "@gecut/i18n": ["packages/ui/i18n/src/i18n.ts"],
+      "@gecut/icons/*": ["packages/ui/icons/src/*"],
+      "@gecut/lit-helper/*": ["packages/ui/lit-helper/src/*"],
+      "@gecut/log": ["packages/core/log/src/index.ts"],
+      "@gecut/logger": ["packages/core/logger/src/index.ts"],
+      "@gecut/lorem": ["packages/core/lorem/src/index.ts"],
+      "@gecut/m3-helper/*": ["packages/ui/m3-helper/src/*"],
+      "@gecut/mixins": ["packages/ui/mixins/src/index.ts"],
+      "@gecut/signal": ["packages/core/signal/src/index.ts"],
+      "@gecut/types": ["packages/core/types/src/types.ts"],
+      "@gecut/ui-kit": ["packages/ui/ui-kit/src/ui-kit.ts"],
+      "@gecut/ui-kit/m3": ["packages/ui/ui-kit/src/m3/m3.ts"],
+      "@gecut/utilities/*": ["packages/core/utilities/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    assignees:
+      - dependabot
+    reviewers:
+      - MM25Zamanian
+    schedule:
+      interval: daily
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+
+  - package-ecosystem: npm
+    directory: /
+    assignees:
+      - dependabot
+    reviewers:
+      - MM25Zamanian
+    schedule:
+      interval: daily
+    labels:
+      - dependencies
+      - ci
+      - priority-low
+      - maintenance

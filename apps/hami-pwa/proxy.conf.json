@@ -1,0 +1,6 @@
+{
+  "/api/v0": {
+    "target": "https://api.hami.gecut.ir",
+    "secure": true
+  }
+}

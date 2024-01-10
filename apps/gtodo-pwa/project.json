@@ -1,0 +1,73 @@
+{
+  "name": "gtodo-pwa",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/gtodo-pwa/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/gtodo-pwa"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "gtodo-pwa:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "gtodo-pwa:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "gtodo-pwa:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "gtodo-pwa:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "gtodo-pwa:build:development"
+        },
+        "production": {
+          "buildTarget": "gtodo-pwa:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/gtodo-pwa/**/*.ts"
+        ]
+      }
+    },
+    "docker-build": {
+      "command": "docker build --build-arg APP_NAME=gtodo-pwa -f cloud/pwa2/Dockerfile . -t gtodo-pwa"
+    }
+  }
+}

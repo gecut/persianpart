@@ -1,0 +1,90 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '**.md'
+
+env:
+  NODE_VERSION: '20.x' # Changed to a version pattern in case you want to use the latest v20 release.
+
+jobs:
+  checkout-setup:
+    name: 🚀 Checkout and Setup
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    outputs:
+      cache-key: ${{ steps.cache.outputs.cache-key }}
+    steps:
+      - name: ⤵️ Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: 🏗 Setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 🏗 Setup nodejs corepack
+        run: corepack enable
+
+      - name: 🏗 Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: ⬇️ Get yarn config
+        id: yarn_config
+        run: echo "cache-folder=$(yarn config get cacheFolder)" >> $GITHUB_ENV
+
+      - name: 🏗 Cache node_modules
+        id: cache
+        uses: actions/cache@v3.3.2
+        with:
+          path:            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            /tmp/.buildx-cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys:            ${{ runner.os }}-yarn-
+
+  lint:
+    name: 🚀 ESLint Scanning
+    runs-on: ubuntu-latest
+    needs: checkout-setup
+    steps:
+      - name: ⤵️ Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: 🏗 Install dependencies
+        run: yarn install --immutable
+
+      - name: 🚨 Lint All Projects
+        run: yarn lint:all
+
+  typescript:
+    name: 🚀 Build Typescript
+    runs-on: ubuntu-latest
+    needs: checkout-setup
+    steps:
+      - name: ⤵️ Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: 🏗 Install dependencies
+        run: yarn install --immutable
+
+      - name: 🔨 Build All Projects
+        run: yarn build:all
+
+  test:
+    name: 🚀 Unit Test
+    runs-on: ubuntu-latest
+    needs: checkout-setup
+    steps:
+      - name: ⤵️ Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: 🏗 Install dependencies
+        run: yarn install --immutable
+
+      - name: ✅ Unit Test All Projects
+        run: yarn test:all

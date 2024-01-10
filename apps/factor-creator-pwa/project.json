@@ -1,0 +1,70 @@
+{
+  "name": "factor-creator-pwa",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/factor-creator-pwa/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/factor-creator-pwa"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "factor-creator-pwa:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "factor-creator-pwa:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "factor-creator-pwa:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "factor-creator-pwa:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "factor-creator-pwa:build:development"
+        },
+        "production": {
+          "buildTarget": "factor-creator-pwa:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/factor-creator-pwa/**/*.ts"
+        ]
+      }
+    }
+  }
+}

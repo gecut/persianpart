@@ -1,0 +1,79 @@
+{
+  "name": "demo-pwa",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/demo-pwa/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/demo-pwa"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development",
+          "watch": true,
+          "minify": false,
+          "logLevel": "info"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "demo-pwa:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "demo-pwa:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "demo-pwa:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "demo-pwa:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "demo-pwa:build:development"
+        },
+        "production": {
+          "buildTarget": "demo-pwa:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/demo-pwa/**/*.ts"
+        ]
+      }
+    },
+    "docker-build": {
+      "dependsOn": [
+        "build"
+      ],
+      "command": "docker build --build-arg PACKAGE_SOURCE=dist/apps/demo-pwa -f cloud/pwa/Dockerfile . -t demo-pwa"
+    }
+  }
+}

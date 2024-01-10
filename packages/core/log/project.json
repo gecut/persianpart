@@ -1,0 +1,30 @@
+{
+  "name": "log",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/core/log/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "rootDir": ".",
+        "outputPath": "dist/packages/core/log",
+        "tsConfig": "packages/core/log/tsconfig.lib.json",
+        "packageJson": "packages/core/log/package.json",
+        "main": "packages/core/log/src/index.ts",
+        "assets": ["packages/core/log/*.md"],
+        "generateExportsField": true
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs log {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}

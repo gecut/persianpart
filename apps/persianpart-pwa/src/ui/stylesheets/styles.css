@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --sys-font-family: Vazirmatn;
+  --md-list-container-color: transparent;
+  --md-list-item-container-color: transparent;
+  --md-list-item-container-shape: 8px;
+}
+
+html {
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+}
+
+app-root {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+* {
+  font-family: var(--sys-font-family);
+}

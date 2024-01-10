@@ -1,0 +1,6 @@
+{
+  "platform": "docker",
+  "image": "ghcr.io/gecut/hami-orders-site:latest",
+  "app": "hami-orders-site",
+  "port": 80
+}

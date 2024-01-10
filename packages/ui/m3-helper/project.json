@@ -1,0 +1,29 @@
+{
+  "name": "m3-helper",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/ui/m3-helper/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/ui/m3-helper",
+        "main": "packages/ui/m3-helper/src/index.ts",
+        "tsConfig": "packages/ui/m3-helper/tsconfig.lib.json",
+        "assets": [],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs m3-helper {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,95 @@
+{
+  "name": "gtodo-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/gtodo-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/gtodo-api",
+        "format": [
+          "cjs"
+        ],
+        "bundle": true,
+        "main": "apps/gtodo-api/src/index.ts",
+        "tsConfig": "apps/gtodo-api/tsconfig.app.json",
+        "assets": [],
+        "outputFileName": "index",
+        "esbuildOptions": {
+          "target": "node19",
+          "sourcemap": true
+        }
+      },
+      "configurations": {
+        "development": {
+          "watch": true
+        },
+        "production": {
+          "minify": true,
+          "generatePackageJson": true,
+          "generateLockfile": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "development",
+      "configurations": {
+        "development": {
+          "commands": [
+            "nx run gtodo-api:build:development",
+            "nodemon dist/apps/gtodo-api/index.cjs --ignore '**/*.json'"
+          ],
+          "parallel": true
+        },
+        "production": {
+          "command": "node dist/apps/gtodo-api/index.cjs"
+        }
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/gtodo-api/**/*.ts"
+        ],
+        "fix": true
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/gtodo-api/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "docker-build": {
+      "dependsOn": [
+        "build"
+      ],
+      "command": "docker build --build-arg PACKAGE_SOURCE=dist/apps/gtodo-api -f cloud/api/Dockerfile . -t gtodo-api"
+    }
+  },
+  "tags": []
+}

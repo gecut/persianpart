@@ -1,0 +1,43 @@
+@import '../stylesheets/element.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 0 calc(var(--sys-spacing-side-padding) / 2);
+  position: relative;
+
+  .fixed {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: var(--sys-zindex-above);
+
+    snack-bar {
+      z-index: var(--sys-zindex-snackbar);
+    }
+
+    md-dialog {
+      z-index: var(--sys-zindex-modal);
+    }
+  }
+}
+
+.navigation-tab {
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+
+md-navigation-tab {
+  height: 100%;
+}

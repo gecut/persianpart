@@ -1,0 +1,69 @@
+{
+  "name": "persianpart-pwa",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/persianpart-pwa/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/persianpart-pwa"
+      },
+      "configurations": {
+        "development": {
+          "watch": true,
+          "minify": false,
+          "cssCodeSplit": true,
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "clearScreen": true,
+        "host": true,
+        "port": 8081,
+        "open": true,
+        "hmr": true,
+        "buildTarget": "persianpart-pwa:build:development"
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "options": {
+        "host": true,
+        "open": true,
+        "port": 4173,
+        "mode": "development",
+        "buildTarget": "persianpart-pwa:build:production"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/persianpart-pwa/**/*.ts"
+        ]
+      }
+    },
+    "docker-build": {
+      "dependsOn": [
+        "build"
+      ],
+      "command": "docker build --build-arg PACKAGE_SOURCE=dist/apps/persianpart-pwa -f cloud/pwa/Dockerfile . -t persianpart-pwa"
+    }
+  }
+}

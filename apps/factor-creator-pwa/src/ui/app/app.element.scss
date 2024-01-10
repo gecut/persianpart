@@ -1,0 +1,18 @@
+:host {
+  overflow-y: auto;
+  padding: 24px 16px;
+
+  ion-card {
+    margin: 0;
+  }
+}
+.card-title {
+  text-align: center;
+}
+.icon-button {
+  position: absolute;
+  top: 10px;
+  inset-inline-end: 8px;
+  cursor: pointer;
+  z-index: 5;
+}

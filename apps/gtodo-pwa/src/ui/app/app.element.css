@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  gap: 12px;
+  position: relative;
+}
+
+h1 {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.task-card {
+  flex-shrink: 0;
+  padding: 8px 16px;
+
+  transition: opacity 500ms ease;
+}
+.task-card p {
+  margin: 0;
+}
+.task-card div {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+}
+.task-card div md-checkbox,
+.task-card div md-circular-progress {
+  margin: auto 0;
+  margin-inline-start: auto;
+}
+.task-card div md-checkbox {
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.task-card div md-circular-progress {
+  --_size: 28px;
+  --_active-indicator-width: 15;
+}
+
+.task-card.task-complete {
+  opacity: 0.5;
+}
+
+.fab {
+  position: fixed;
+  inset-inline-end: 16px;
+  bottom: 16px;
+}
+
+[hidden] {
+  display: none;
+}

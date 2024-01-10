@@ -1,0 +1,13 @@
+{
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "rules",
+      "at-rules"
+    ]
+  }
+}

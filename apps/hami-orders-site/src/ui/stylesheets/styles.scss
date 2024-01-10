@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --sys-font-family: Vazirmatn;
+  --md-list-item-container-color: transparent;
+  --md-list-item-container-shape: 8px;
+}
+
+html {
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  margin: auto;
+}
+
+app-root {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+@media print {
+  body {
+    width: 21cm;
+    height: 29.7cm;
+  }
+}
+
+@media screen {
+  body {
+    width: 1000px;
+    margin: auto;
+  }
+}
+
+* {
+  font-family: var(--sys-font-family);
+}

@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  gap: calc(1.6 * var(--sys-spacing-track));
+}
+
+.tertiary-btn {
+  --_container-color: var(
+    --md-tonal-button-container-color,
+    var(--md-sys-color-tertiary-container, #e8def8)
+  );
+  --_focus-label-text-color: var(
+    --md-tonal-button-focus-label-text-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_hover-label-text-color: var(
+    --md-tonal-button-hover-label-text-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_hover-state-layer-color: var(
+    --md-tonal-button-hover-state-layer-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_label-text-color: var(
+    --md-tonal-button-label-text-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_pressed-label-text-color: var(
+    --md-tonal-button-pressed-label-text-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_pressed-state-layer-color: var(
+    --md-tonal-button-pressed-state-layer-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_with-icon-focus-icon-color: var(
+    --md-tonal-button-with-icon-focus-icon-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_with-icon-hover-icon-color: var(
+    --md-tonal-button-with-icon-hover-icon-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_with-icon-icon-color: var(
+    --md-tonal-button-with-icon-icon-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+  --_with-icon-pressed-icon-color: var(
+    --md-tonal-button-with-icon-pressed-icon-color,
+    var(--md-sys-color-on-tertiary-container, #1d192b)
+  );
+}

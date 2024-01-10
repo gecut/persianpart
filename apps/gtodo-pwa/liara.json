@@ -1,0 +1,6 @@
+{
+  "platform": "docker",
+  "image": "ghcr.io/gecut/gtodo-pwa:latest",
+  "app": "gtodo-pwa",
+  "port": 80
+}

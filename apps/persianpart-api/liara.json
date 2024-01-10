@@ -1,0 +1,6 @@
+{
+  "platform": "docker",
+  "image": "ghcr.io/gecut/persianpart-api:latest",
+  "app": "persianpart-api",
+  "port": 80
+}

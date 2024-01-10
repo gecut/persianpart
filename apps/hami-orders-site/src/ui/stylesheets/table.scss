@@ -1,0 +1,37 @@
+$table-header-bg: #0001;
+$table-border-color: #222;
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 16px;
+
+  td {
+    border-color: $table-border-color;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    font-size: 0.8em;
+    padding: 8px;
+    text-align: center;
+    vertical-align: center;
+
+    p {
+      display: block;
+      margin: 0.1em;
+    }
+  }
+
+  th {
+    background-color: $table-header-bg;
+    border-color: $table-border-color;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    font-size: 0.9em;
+    font-weight: 400;
+    padding: 10px 5px;
+  }
+}

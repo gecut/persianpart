@@ -1,0 +1,20 @@
+{
+  "name": "@gecut/log",
+  "version": "0.0.1",
+  "type": "module",
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "email": "mm25zamanian@gmail.com",
+    "url": "https://mm25zamanain.ir"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "license": "MIT",
+  "files": [
+    "**/*.{d.ts.map,d.ts,js.map,js,html,md}"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

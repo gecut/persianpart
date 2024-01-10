@@ -1,0 +1,40 @@
+{
+  "type": "module",
+  "name": "@gecut/signal",
+  "description": "Experience the pinnacle of high-performance, memory-safe signal architecture with our TypeScript-based npm package—easy to use and perfect for micro-component systems",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gecut/gecut/tree/next/packages/core/signal",
+  "license": "MIT",
+  "module": "./src/index.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "packageManager": "yarn@4.0.2",
+  "keywords": [
+    "High-performance",
+    "Signal architecture",
+    "Micro-component",
+    "TypeScript",
+    "Memory-safe",
+    "Super fast",
+    "User-friendly",
+    "Efficient",
+    "Scalable",
+    "Modular design"
+  ],
+  "bugs": {
+    "url": "https://github.com/gecut/gecut/issues",
+    "email": "dev@gecut.ir"
+  },
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "url": "https://mm25zamanian.ir",
+    "email": "mm25zamanian@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/gecut"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

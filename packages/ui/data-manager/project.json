@@ -1,0 +1,39 @@
+{
+  "name": "data-manager",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/ui/data-manager/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "rootDir": ".",
+        "outputPath": "dist/packages/ui/data-manager",
+        "main": "packages/ui/data-manager/src/index.ts",
+        "tsConfig": "packages/ui/data-manager/tsconfig.lib.json",
+        "assets": []
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs data-manager {args.ver} {args.tag}",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/ui/data-manager/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

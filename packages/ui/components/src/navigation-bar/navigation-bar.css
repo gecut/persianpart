@@ -1,0 +1,48 @@
+:host {
+  --_background-color: var(--g-navigation-tab-background-color, #f7ecfd);
+
+  display: flex;
+  width: 100%;
+  background-color: var(--_background-color);
+  height: 80px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.533) 0px 0px 12px -2px;
+  position: fixed;
+  bottom: 0;
+  z-index: var(--sys-zindex-above, 2);
+}
+
+:host([island]) {
+  margin: 16px;
+  border-radius: 20px;
+  width: calc(100% - 32px);
+}
+
+@media only screen and (min-width: 600px) {
+  :host([auto-island]) {
+    margin: 16px;
+    border-radius: 20px;
+    width: calc(100% - 32px);
+  }
+}
+
+:host::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--_background-color);
+  filter: contrast(95%);
+}
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 4px clamp(8px, 8vw, 24px) 0;
+  justify-content: space-evenly;
+}
+
+::slotted(*) {
+  --_background-color: var(--g-navigation-tab-background-color, #f7ecfd);
+}

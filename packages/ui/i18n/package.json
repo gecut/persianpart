@@ -1,0 +1,29 @@
+{
+  "name": "@gecut/i18n",
+  "version": "0.0.1",
+  "type": "module",
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "email": "mm25zamanian@gmail.com",
+    "url": "https://mm25zamanain.ir"
+  },
+  "exports": {
+    ".": "./src/i18n.ts"
+  },
+  "license": "MIT",
+  "files": [
+    "**/*.{d.ts.map,d.ts,js.map,js,html,md}"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/gecut",
+    "directory": "packages/ui/i18n"
+  },
+  "homepage": "https://github.com/gecut/gecut/tree/next/packages/ui/i18n#readme",
+  "bugs": {
+    "url": "https://github.com/gecut/gecut/issues"
+  }
+}

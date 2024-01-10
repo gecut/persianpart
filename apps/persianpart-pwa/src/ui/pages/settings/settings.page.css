@@ -1,0 +1,50 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  gap: calc(1.6 * var(--sys-spacing-track));
+}
+
+surface-card.data-input {
+  flex-shrink: 0;
+  padding: calc(2 * var(--sys-spacing-track));
+}
+
+surface-card h2 {
+  margin-top: 0;
+  font-family: var(--md-sys-typescale-title-large-font-family-name);
+  font-style: var(--md-sys-typescale-title-large-font-family-style);
+  font-weight: var(--md-sys-typescale-title-large-font-weight);
+  font-size: var(--md-sys-typescale-title-large-font-size);
+  letter-spacing: var(--md-sys-typescale-title-large-tracking);
+  line-height: var(--md-sys-typescale-title-large-height);
+  text-transform: var(--md-sys-typescale-title-large-text-transform);
+  text-decoration: var(--md-sys-typescale-title-large-text-decoration);
+}
+
+surface-card.data-input input {
+  margin: calc(2 * var(--sys-spacing-track));
+}
+
+surface-card.data-input md-filled-button {
+  margin-top: calc(2 * var(--sys-spacing-track));
+}
+
+surface-card.data-show md-list-item {
+  --_list-item-label-text-type: 400 0.8rem / 1.5rem
+    var(--md-ref-typeface-plain, Roboto);
+}
+
+surface-card.data-show md-list-item div[slot='start'] {
+  overflow: hidden;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+}
+surface-card.data-show md-list-item div[slot='start'] img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
