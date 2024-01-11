@@ -110,7 +110,7 @@ export default defineConfig({
       allow: ['..', '../../node_modules/'],
     },
     watch: {
-      ignored: ['**/*', '!../**/*'],
+      ignored: ['*', '!./**/*'],
     },
   },
 

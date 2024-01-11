@@ -103,7 +103,7 @@ export class PageSettings extends PageBase {
       this.productsData = data
         .map(
           (item): ProductJsonEntity => ({
-            nickId: item.nickId,
+            nickId: String(item.nickId),
             name: arabicToPersian(item.name),
             price: item.price,
             quantity: item.quantity,
