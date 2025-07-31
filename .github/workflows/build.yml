@@ -40,7 +40,7 @@ jobs:
 
       - name: 🏗 Cache node_modules
         id: cache
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v3
         with:
           path:            ${{ steps.yarn-cache-dir-path.outputs.dir }}
             /tmp/.buildx-cache
