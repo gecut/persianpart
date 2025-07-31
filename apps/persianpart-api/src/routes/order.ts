@@ -20,8 +20,8 @@ export const order = router({
     sendSMS({
       apikey:
         '636756372B66647532716F533068746E3138365938624B38423942686763584C57796531593950364C76303D',
-      message: 'یک سفارش جدید برای شما ثبت شد',
-      receptor: ['09151154220', '09155595488', '09101154220'],
+      message: `${options.ctx.user.firstName} ${options.ctx.user.lastName} یک سفارش در پرشین‌پارت ثبت کرد`,
+      receptor: ['09101154220', '09155595488'],
       sender: '100010001019',
     });
     // استخراج لیست محصولات از ورودی
@@ -114,10 +114,11 @@ export const order = router({
       // ساخت آرایه‌ای از عملیات bulk برای به‌روزرسانی موجودی محصولات
       const bulkOps = order.products.map((orderProduct) => ({
         updateOne: {
-          filter: { id: orderProduct._id },
+          filter: { _id: orderProduct._id },
           update: { $inc: { quantity: orderProduct.amount } },
         },
-      }));
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      })) as any[];
 
       // اجرای تمام آپدیت‌ها در یک عملیات bulk
       const result = await ProductModel.bulkWrite(bulkOps, { ordered: false });
