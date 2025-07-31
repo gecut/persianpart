@@ -1,12 +1,11 @@
 import type { OrderJsonEntity } from '#persianpart/entities/order';
 import { OrderModel, orderInputValidation } from '#persianpart/entities/order';
 import { ProductModel } from '#persianpart/entities/product';
+import { sendSMS } from '#persianpart/libs/send-sms';
 import { userProcedure, router, adminProcedure } from '#persianpart/libs/trpc';
-import fetch from 'node-fetch';
 
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
-import { sendSMS } from '#persianpart/libs/send-sms';
 
 export const order = router({
   repository: adminProcedure.query(
@@ -35,6 +34,7 @@ export const order = router({
     const dbProductMap = new Map(dbProducts.map((p) => [p._id.toString(), p]));
 
     // بررسی موجودی‌ها و ساخت عملیات‌های آپدیت
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const bulkOps: any[] = [];
 
     for (const item of products) {
