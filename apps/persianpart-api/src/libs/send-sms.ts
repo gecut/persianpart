@@ -8,7 +8,7 @@ import fetch from 'node-fetch';
 export interface SendSMSParams {
   apikey: string;
   receptor: string | string[]; // can send to multiple numbers
-  message: string;
+  token: string;
   sender?: string; // optional sender line
 }
 
@@ -38,8 +38,7 @@ export interface KavenegarResponse {
 export const sendSMS = async ({
   apikey,
   receptor,
-  message,
-  sender,
+  token,
 }: SendSMSParams): Promise<KavenegarResponse> => {
   const url = `https://api.kavenegar.com/v1/${apikey}/sms/send.json`;
 
@@ -48,8 +47,7 @@ export const sendSMS = async ({
     'receptor',
     Array.isArray(receptor) ? receptor.join(',') : receptor,
   );
-  params.append('message', message);
-  if (sender) params.append('sender', sender);
+  params.append('token', token);
 
   const res = await fetch(url, {
     method: 'POST',
