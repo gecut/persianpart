@@ -40,29 +40,33 @@ export const sendSMS = async ({
   receptor,
   token,
 }: SendSMSParams): Promise<KavenegarResponse> => {
-  const url = `http://api.kavenegar.com/v1/${apikey}/verify/lookup.json`;
+  try {
+    const url = `http://api.kavenegar.com/v1/${apikey}/verify/lookup.json`;
 
-  const res = await fetch(url, {
-    method: 'POST',
-    body: new URLSearchParams({
-      receptor,
-      token,
-      template: 'persianpart-new-order',
-    }),
-  });
+    const res = await fetch(url, {
+      method: 'POST',
+      body: new URLSearchParams({
+        template: 'persianpart-new-order',
+        receptor,
+        token,
+      }),
+    });
 
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`HTTP Error ${res.status}: ${text}`);
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`HTTP Error ${res.status}: ${text}`);
+    }
+
+    const json: KavenegarResponse = (await res.json()) as KavenegarResponse;
+
+    if (json.return.status !== 200) {
+      throw new Error(
+        `Kavenegar Error ${json.return.status}: ${json.return.message}`,
+      );
+    }
+
+    return json;
+  } catch (error) {
+    console.error(error);
   }
-
-  const json: KavenegarResponse = (await res.json()) as KavenegarResponse;
-
-  if (json.return.status !== 200) {
-    throw new Error(
-      `Kavenegar Error ${json.return.status}: ${json.return.message}`,
-    );
-  }
-
-  return json;
 };
