@@ -48,6 +48,7 @@ export const sendSMS = async ({
     Array.isArray(receptor) ? receptor.join(',') : receptor,
   );
   params.append('token', token);
+  params.append('template', 'persianpart-new-order');
 
   const res = await fetch(url, {
     method: 'POST',
