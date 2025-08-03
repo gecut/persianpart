@@ -40,7 +40,7 @@ export const sendSMS = async ({
   receptor,
   token,
 }: SendSMSParams): Promise<KavenegarResponse> => {
-  const url = `https://api.kavenegar.com/v1/${apikey}/sms/send.json`;
+  const url = `https://api.kavenegar.com/v1/${apikey}/verify/lookup.json`;
 
   const params = new URLSearchParams();
   params.append(
