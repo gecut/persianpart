@@ -63,9 +63,9 @@ const manifestJson: Partial<ManifestOptions> = {
   ],
 
   /* info */
-  name: 'وب اپلیکیشن پرشین پارت',
-  short_name: 'پرشین پارت',
-  description: 'وب اپلیکیشن فروشگاه بازرگانی پرشین پارت',
+  name: 'Andia Gres',
+  short_name: 'AndiaGres',
+  description: '',
 
   /* screen */
   display: 'standalone',
