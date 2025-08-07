@@ -22,9 +22,15 @@ export async function initializeDB() {
 }
 
 export async function addRootUser() {
-  if (((await UserModel.count?.()) ?? 1) >= 1) return;
-
   const addRootUserLogger = dbLogger.scope('addRootUser');
+
+  if (((await UserModel.count?.()) ?? 1) >= 1) {
+    const user = await UserModel.findOne({});
+
+    addRootUserLogger.success('User:', user);
+
+    return;
+  }
 
   addRootUserLogger.info(`addRootUser`);
 
