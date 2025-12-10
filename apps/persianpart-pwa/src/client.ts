@@ -10,7 +10,7 @@ export const api = createTRPCProxyClient<AppRouter>({
   links: [
     errorHandlingLink,
     httpLink({
-      url: 'https://api.persianpartshop.ir',
+      url: 'https://api-andiagres.darkube.app',
       fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => {
         request('loading', 'start');
 
