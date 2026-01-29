@@ -21,7 +21,7 @@ export const order = router({
       apikey:
         '636756372B66647532716F533068746E3138365938624B38423942686763584C57796531593950364C76303D',
       token: options.ctx.user.lastName,
-      receptor: '09101154220',
+      receptor: '09151154220',
     });
     // استخراج لیست محصولات از ورودی
     const { products } = options.input;
