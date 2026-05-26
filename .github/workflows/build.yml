@@ -2,9 +2,9 @@ name: Build
 
 on:
   workflow_dispatch:
-  push:
-    paths-ignore:
-      - '**.md'
+#   push:
+#     paths-ignore:
+#       - '**.md'
 
 env:
   NODE_VERSION: '20.x' # Changed to a version pattern in case you want to use the latest v20 release.
